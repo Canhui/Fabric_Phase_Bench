@@ -1,14 +1,11 @@
 #### 1. Prepare Multiple Computing Nodes on the Cloud
 
 Please see section 1 in the guidance.
-
-<br />
+<br>
 
 #### 2. Test Hyperledger Fabric on Each Single Node
 
-Please see section 2 in the guidance.
-
-<br />
+Please see section 2 in the guidance. <br>
 
 #### 3. Test Hyperledger Fabric on Multiple Nodes
 
