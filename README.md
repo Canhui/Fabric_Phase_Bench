@@ -24,4 +24,5 @@ Please see section 6 in the [guidance.doc](https://www.reference.com)/[guidance.
 
 ### Reference
 [1. Hyperledger Fabric] https://github.com/hyperledger/fabric/tree/v2.2.0 <br>
-[2. Hyperledger Fabric SDK for node.js] https://hyperledger.github.io/fabric-sdk-node/release-1.4/module-fabric-network.html
+[2. Hyperledger Fabric Dynamic Channel Update] https://hyperledger-fabric.readthedocs.io/en/release-2.2/config_update.html <br>
+[3. Hyperledger Fabric SDK for node.js] https://hyperledger.github.io/fabric-sdk-node/release-1.4/module-fabric-network.html
