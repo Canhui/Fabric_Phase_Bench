@@ -1,3 +1,10 @@
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+  <li>Fourth item</li>
+</ul>
+
 ### 1. Environment Preparation
 
 Please see section A in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for preparation of multiple computing nodes on the cloud.
