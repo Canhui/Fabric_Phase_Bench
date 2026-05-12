@@ -35,7 +35,7 @@ Please see section 10 in the [guidance.doc](https://www.reference.com)/[guidance
 
 ### License
 
-Fabric Phase Bench source code is available under the MIT License.
+Fabric_Phase_Bench source code is available under the MIT License.
 
 
 ### Reference
