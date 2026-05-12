@@ -5,6 +5,18 @@
   <li>Fourth item</li>
 </ul>
 
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item
+    <ul>
+      <li>Indented item</li>
+      <li>Indented item</li>
+    </ul>
+  </li>
+  <li>Fourth item</li>
+</ul>
+
 ### 1. Environment Preparation
 
 Please see section A in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for preparation of multiple computing nodes on the cloud.
