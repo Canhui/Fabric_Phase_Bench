@@ -8,7 +8,6 @@ Please see section 1 in the [guidance.doc](https://www.reference.com)/[guidance.
 
 Please see section 2 in the [guidance.doc](https://www.reference.com)/[guidance.pdf](https://www.reference.com) for single node test of Hyperledger Fabric.
 
-<br />
 
 ### 3. Multiple Nodes Test
 
