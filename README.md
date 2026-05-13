@@ -13,8 +13,21 @@ Please see section A of the tutorial for preparation of multiple computing nodes
 
 Please see section B of the tutorial for preparation of single-node test of Hyperledger Fabric network.
 
+#### 2.3. Workload Generator
+
 <ul>
-  <li>2.2. Single-Node Test: Please see section B of the tutorial for preparation of single-node test of Hyperledger Fabric network.</li> 
+  <li>**How to generate a transaction via Nodejs?**: 
+  For invoke a transaction, please see [invoke.js](www.link.com). For query a transaction, please see [query.js](www.query.com).
+  </li> 
+  <li>2.2. Single-Node Test: Please see section B of the tutorial for preparation of single-node test of Hyperledger Fabric network.</li>
+  <li>Third item</li>
+  <li>Fourth item</li>
+</ul>
+
+
+
+<ul>
+  <li>**2.2. Single-Node Test**: Please see section B of the tutorial for preparation of single-node test of Hyperledger Fabric network.</li> 
   <li>2.2. Single-Node Test: Please see section B of the tutorial for preparation of single-node test of Hyperledger Fabric network.</li>
   <li>Third item</li>
   <li>Fourth item</li>
