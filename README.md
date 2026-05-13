@@ -64,6 +64,17 @@ Please see section 9 of the tutorial for different transaction payoff sizes.
 Please see section 10 of the tutorial for different chaincodes.
 
 
+## 4. Numerical Results
+
+#### 4.1. Execute Phase in Cluster 1
+
+This is the numerical results of the cluster 1
+
+
+
+
+
+
 
 
 
