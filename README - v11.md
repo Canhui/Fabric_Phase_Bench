@@ -244,7 +244,7 @@ Table 3. The effects of OSNs on the throughput and latency in the order phase. T
 
 |      | Measure derived |         |          |         |              | Measure             |          |         |                     |          |          |                     |            |          |                     |                 |                     | Our model |               |
 | ---- | --------------- | ------- | -------- | ------- | ------------ | ------------------- | -------- | ------- | ------------------- | -------- | -------- | ------------------- | ---------- | -------- | ------------------- | --------------- | ------------------- | --------- | ------------- |
-| $k$  | $\lambda^r$     | $\mu^r$ | $\rho^r$ | $T_s^r$ | $T_{w}^r$ | $T_{c2l}^r$         | BW       | avg BW  | Our $T_{l2f}^r$     | Our BW   | avg BW   | $M/M/1$ $T_{l2f}^r$ | $M/M/1$ BW | avg BW   | Our $T_q^r$         | $M/M/1$ $T_q^r$ | $T^r$               | Our $T^r$ | $M/M/1$ $T^r$ |
+| $k$  | $\lambda^r$     | $\mu^r$ | $\rho^r$ | $T_s^r$ | $T_{idle}^r$ | $T_{c2l}^r$         | BW       | avg BW  | Our $T_{l2f}^r$     | Our BW   | avg BW   | $M/M/1$ $T_{l2f}^r$ | $M/M/1$ BW | avg BW   | Our $T_q^r$         | $M/M/1$ $T_q^r$ | $T^r$               | Our $T^r$ | $M/M/1$ $T^r$ |
 | 3    | 70              | 190     | 0.3684   | 0.0053  | 0.1429       | 0.0403 $\pm$ 0.0061 | 40.7103  | 55.1617 | 0.1928 $\pm$ 0.1082 | 17.0189  | 17.4942  | 0.1901 $\pm$ 0.1082 | 17.2607    | 17.7970  | 0.0004 $\pm$ 0.0008 | 0.0031          | 0.3817 $\pm$ 0.1051 | 0.3659    | 0.2225        |
 | 3    | 109             | 190     | 0.5737   | 0.0053  | 0.0917       | 0.0521 $\pm$ 0.0080 | 49.0343  | 55.1617 | 0.2818 $\pm$ 0.0705 | 18.1312  | 17.4942  | 0.277 $\pm$ 0.0705  | 18.4454    | 17.7970  | 0.0023 $\pm$ 0.0010 | 0.0071          | 0.4332 $\pm$ 0.0792 | 0.4377    | 0.3458        |
 | 3    | 180             | 190     | 0.9474   | 0.0053  | 0.0556       | 0.0557 $\pm$ 0.0160 | 75.7406  | 55.1617 | 0.4868 $\pm$ 0.1246 | 17.3326  | 17.4942  | 0.4771 $\pm$ 0.1246 | 17.6850    | 17.7970  | 0.0850 $\pm$ 0.0013 | 0.0947          | 0.6884 $\pm$ 0.1411 | 0.7047    | 0.6506        |
@@ -257,61 +257,6 @@ Table 3. The effects of OSNs on the throughput and latency in the order phase. T
 
 Table 3 shows the effects of OSNs on throughput and latency during the order phase. There are $k=3, 9, 15$ OSNs in cluster 1 of a 1 Gbit/s Ethernet network. The \textit{BatchSize} is 20 and the \textit{BatchTimeout} is 1. It validates the model of throughput and latency in the order phase. The details of performance metrics are as follows:
 
-<ul>
-
-  <li> Performance metric - $k$
-    <ul>
-      <li> Explanation: The number of ordering service nodes in the order phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\lambda^r$
-    <ul>
-      <li> Explanation: The transaction arrival rate in transactions per second in the order phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\mu^r$
-    <ul>
-      <li> Explanation: The maximum throughput of the ordering service in the order phase.</li>
-      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes, i.e., $k=3$, is $\mu^r=190$ transactions per second.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $\rho^r$
-    <ul>
-      <li> Explanation: The utilization of the ordering service in the order phase, where we can derive $\rho^r=\lambda^r/(c\mu^r)$.</li>
-      <li> Example 1: The maximum throughput of the ordering service with three ordering service nodes is $\mu^e=190$ transactions per second, $\lambda^r=70$ transactions per second, and hence $\rho^r=\lambda^r/(c\mu^r)=70/190=0.3684$.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_s^r$
-    <ul>
-      <li> Explanation: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r$.</li>
-      <li> Example 1: The service time of a transaction in the order phase, where we can derive $T_s^r=1/ \mu^r=1/190=0.0053$ seconds.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_q^r$
-    <ul>
-      <li> Explanation: The queueing latency of a transaction in the order phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_w^r$
-    <ul>
-      <li> Explanation: The waiting time of a transaction in the order phase.</li>
-    </ul>
-  </li>
-
-  <li> Performance metric - $T_{c2l}^r$, $T_{l2f}^r$
-    <ul>
-      <li> Explanation: The communication latency spent between the client and the ordering service.</li>
-      <li> Example 1: The number of ordering service nodes be $k=3$ and the transaction arrival rate be $\lambda^r=70$ transactions per second, we have a queueing latency of $T_q^r=0.0004$ seconds. We measure the overall latency of a transaction spent in the order phase $T^r=0.3817$ seconds and the communication latency spent between the client and the ordering service $T_{c2l}^r=0.0403$ seconds, from which the communication latency spent between the OSN leader and followers $T_{l2f}^r=0.1928$. And when $k=3$, the effective network bandwidth is stable around $\beta_{c2l}^r=55.1617$ Mbps, $\beta_{l2f}^r=17.4942$ Mbps, from which the model has an overall latency $T^r=0.3659$ seconds.</li>
-    </ul>
-  </li>
-
-</ul>
 
 
 
@@ -320,6 +265,13 @@ Table 3 shows the effects of OSNs on throughput and latency during the order pha
 
 
 
+
+
+
+
+
+
+The maximum throughput of the ordering service with a \textit{BatchSize} of 20 is $\mu^r=190$ transactions per second. This means that the service time of a transaction is $T_s^r=0.0053$ seconds. For example, if we let the number of ordering service nodes be $k=3$ and the transaction arrival rate be $\lambda^r=70$ transactions per second, we have a queueing latency of $T_q^r=0.0009$ seconds. We measure the overall latency of a transaction spent in the order phase $T^r=0.3817$ seconds and the communication latency spent between the client and the ordering service $T_{c2l}^r=0.0403$ seconds, from which the communication latency spent between the OSN leader and followers $T_{l2f}^r=0.1924$. And when $n=3$, the effective network bandwidth is stable around $\beta_{c2l}^r=57.3301$ Mbps, $\beta_{l2f}^r=18.1730$ Mbps, from which the model has an overall latency $T^r=0.3582$ seconds.
 
 
 
