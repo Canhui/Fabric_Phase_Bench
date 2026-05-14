@@ -67,6 +67,7 @@ Please see section 10 of the tutorial for different chaincodes.
 
 
 
+
 ## 4. Numerical Results
 
 #### 4.1. Execute Phase in Cluster 1
@@ -103,52 +104,54 @@ Please see section 10 of the tutorial for different chaincodes.
 
 Table 1 shows the throughput and latency of an endorsing peer with $c=1, 2, 4$ CPU core(s) in cluster 1. It validates the performance mode of throughput and latency in the execute phase. The details of performance metrics are as follows:
 
+
 <ul>
 
   <li> Performance metric - $c$
     <ul>
-      <li> Definition: The number of CPU cores in the execute phase.</li>
+      <li> Definition: The number of CPU cores.</li>
     </ul>
   </li>
 
   <li> Performance metric - $\lambda^e$
     <ul>
-      <li> Definition: The transaction arrival rate in transactions per second in the execute phase.</li>
+      <li> Definition: The transaction arrival rate in transactions per second.</li>
     </ul>
   </li>
 
   <li> Performance metric - $\mu^e$
     <ul>
-      <li> Definition: The maximum throughput of an endorsing peer with a single CPU core in the execute phase.</li>
+      <li> Definition: The maximum throughput of an endorsing peer with a single CPU core.</li>
       <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
     </ul>
   </li>
 
   <li> Performance metric - $\rho^e$
     <ul>
-      <li> Definition: The utilization of an endorsing peer in the execute phase, where we can derive $\rho^e=\lambda^e/(c\mu^e)$.</li>
+      <li> Definition: The utilization of an endorsing peer, where $\rho^e=\lambda^e/(c\mu^e)$.</li>
       <li> Example 1: The maximum throughput of an endorsing peer with a single CPU core, i.e., $c=1$, is $\mu^e=780$ transactions per second.</li>
     </ul>
   </li>
 
-  <li> Performance metric - $T_s^e$
+
+
+
+
+  <li> Q2: How to generate some transactions using a client?
     <ul>
-      <li> Definition: The service time of a transaction in the execute phase, where we can derive $T_s^e=1/mu^e$.</li>
+      <li>For invoke some transactions, please see ssh.sh under the workload folder.</li>
+      <li>For query some transactions, please see ssh.sh under the worklaod folder.</li>
     </ul>
   </li>
 
-  <li> Performance metric - $T_q^e$
+  <li> Q3: How to stably generate many transactions using many clients?
     <ul>
-      <li> Definition: The queueing latency of a transaction in the execute phase.</li>
+      <li>For stably invoke many transactions, please see ssh.sh under the workload folder.</li>
+      <li>For stably query many transactions, please see ssh.sh under the worklaod folder.</li>
     </ul>
   </li>
 
-  <li> Performance metric - $T_{comm}^e$
-    <ul>
-      <li> Definition: The communication latency of a transaction in the execute phase, where we measure the overall latency $T^e$, and we can derive $T_{comm}^e=T^e-T_s^e-T_q^e$.</li>
-    </ul>
-  </li>
-
+  
 </ul>
 
 
